@@ -29,26 +29,36 @@ const ProjectsSection = () => (
     <div className="mx-auto max-w-6xl">
       <div className="mb-10">
         <p className="text-sm uppercase tracking-[0.35em] text-amber-300">Projects</p>
-        <h2 className="mt-4 text-4xl font-semibold text-white sm:text-5xl">High-impact builds with refined product polish.</h2>
+        <h2 className="mt-4 text-4xl font-semibold text-white sm:text-5xl">Projects designed for scale and conversion.</h2>
+        <p className="mt-4 max-w-2xl text-slate-400">
+          Each case is framed with product intent, smooth motion, and an interface palette that feels premium.
+        </p>
       </div>
 
       <div className="grid gap-6 xl:grid-cols-3">
-        {projects.map((project) => (
+        {projects.map((project, index) => (
           <motion.div
             key={project.title}
-            whileHover={{ y: -8, scale: 1.02 }}
-            className="group card-glass overflow-hidden rounded-[2rem] border border-white/10 shadow-xl shadow-slate-900/20"
+            whileHover={{ y: -10, scale: 1.02 }}
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.25 }}
+            transition={{ duration: 0.55, delay: index * 0.1 }}
+            className="group card-glass overflow-hidden rounded-[2rem] border border-white/10 shadow-xl shadow-slate-950/20"
           >
-            <div className="h-52 bg-gradient-to-br from-orange-500/15 via-transparent to-amber-400/10 p-6">
-              <div className="flex h-full flex-col justify-between rounded-[1.6rem] bg-slate-950/90 p-6 text-white shadow-inner shadow-slate-900/20">
-                <div>
-                  <p className="text-sm uppercase tracking-[0.3em] text-amber-300">Featured</p>
-                  <h3 className="mt-4 text-2xl font-semibold">{project.title}</h3>
-                </div>
-                <p className="text-sm text-slate-300">{project.description}</p>
+            <div className="relative h-60 overflow-hidden bg-slate-900">
+              <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(255,184,80,0.2),_transparent_40%)]" />
+              <div className="absolute inset-0 bg-[linear-gradient(135deg,rgba(255,255,255,0.08),transparent_60%)]" />
+              <div className="absolute inset-x-6 top-6 flex items-center justify-between text-white">
+                <span className="rounded-full bg-slate-950/70 px-3 py-1 text-xs uppercase tracking-[0.3em] text-amber-300">Preview</span>
+                <span className="rounded-full bg-white/10 px-3 py-1 text-xs uppercase tracking-[0.3em] text-slate-200">UI</span>
+              </div>
+              <div className="absolute bottom-0 left-0 right-0 p-6">
+                <h3 className="text-2xl font-semibold text-white">{project.title}</h3>
               </div>
             </div>
             <div className="space-y-4 p-6">
+              <p className="text-slate-300">{project.description}</p>
               <div className="flex flex-wrap gap-2">
                 {project.tech.map((tool) => (
                   <span key={tool} className="rounded-full bg-white/10 px-3 py-1 text-xs uppercase tracking-[0.2em] text-slate-200">
@@ -59,13 +69,13 @@ const ProjectsSection = () => (
               <div className="flex flex-wrap gap-3 pt-2">
                 <a
                   href={project.live}
-                  className="rounded-full border border-white/10 bg-slate-900/70 px-4 py-2 text-sm text-white transition hover:bg-amber-500/10"
+                  className="rounded-full border border-white/10 bg-slate-900/80 px-4 py-2 text-sm text-white transition hover:bg-amber-500/15"
                 >
                   Live Demo
                 </a>
                 <a
                   href={project.code}
-                  className="rounded-full border border-white/10 bg-slate-900/70 px-4 py-2 text-sm text-white transition hover:bg-amber-500/10"
+                  className="rounded-full border border-white/10 bg-slate-900/80 px-4 py-2 text-sm text-white transition hover:bg-amber-500/15"
                 >
                   GitHub
                 </a>

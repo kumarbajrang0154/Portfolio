@@ -14,42 +14,47 @@ const SkillsSection = () => (
       <div className="mb-10 flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
         <div>
           <p className="text-sm uppercase tracking-[0.35em] text-amber-300">Skills</p>
-          <h2 className="mt-4 text-4xl font-semibold text-white sm:text-5xl">Core technologies powering the experience.</h2>
+          <h2 className="mt-4 text-4xl font-semibold text-white sm:text-5xl">Modern stack, polished execution.</h2>
         </div>
         <p className="max-w-xl text-slate-400">
-          Clean architecture and polished interactions powered by modern React, Tailwind, and server-driven state.
+          Skill cards that highlight capability and confidence with accelerated motion and soft branding.
         </p>
       </div>
 
       <div className="grid gap-6 lg:grid-cols-2">
-        {skills.map((skill) => {
+        {skills.map((skill, index) => {
           const Icon = skill.icon;
           return (
             <motion.div
               key={skill.name}
-              className="card-glass rounded-[2rem] border border-white/10 p-7 shadow-xl shadow-slate-900/20"
+              className="glass-card rounded-[2rem] p-7 shadow-xl shadow-slate-950/20"
               initial={{ opacity: 0, y: 24 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.3 }}
-              transition={{ duration: 0.6 }}
+              transition={{ duration: 0.6, delay: index * 0.08 }}
             >
               <div className="flex items-center gap-4">
-                <div className="flex h-14 w-14 items-center justify-center rounded-3xl bg-slate-900 text-amber-300">
-                  <Icon className="h-7 w-7" />
+                <div className="flex h-16 w-16 items-center justify-center rounded-3xl bg-gradient-to-br from-amber-400 to-orange-500 text-white shadow-lg shadow-orange-500/20">
+                  <Icon className="h-8 w-8" />
                 </div>
                 <div>
-                  <h3 className="text-xl font-semibold text-white">{skill.name}</h3>
-                  <p className="text-sm text-slate-400">Proficiency</p>
+                  <h3 className="text-2xl font-semibold text-white">{skill.name}</h3>
+                  <p className="text-sm text-slate-400">Trusted in fast SaaS product builds.</p>
                 </div>
               </div>
 
-              <div className="mt-6 rounded-full bg-white/5 p-1">
-                <div
-                  className="h-3 rounded-full bg-gradient-to-r from-amber-400 to-orange-500"
-                  style={{ width: `${skill.level}%` }}
-                />
+              <div className="mt-8 space-y-3">
+                <div className="flex items-center justify-between text-sm text-slate-400">
+                  <span>Proficiency</span>
+                  <span className="font-semibold text-white">{skill.level}%</span>
+                </div>
+                <div className="h-3 overflow-hidden rounded-full bg-white/10">
+                  <div
+                    className="h-full rounded-full bg-gradient-to-r from-amber-400 to-orange-500 transition-all duration-700"
+                    style={{ width: `${skill.level}%` }}
+                  />
+                </div>
               </div>
-              <p className="mt-4 text-sm text-slate-400">{skill.level}% ready for production workflows.</p>
             </motion.div>
           );
         })}

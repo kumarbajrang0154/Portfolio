@@ -14,19 +14,19 @@ const Navbar = ({ onHire, theme, onToggleTheme }) => {
     <motion.nav
       initial={{ y: -80, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
-      transition={{ duration: 0.7, ease: 'easeOut' }}
-      className="sticky top-0 z-50 mx-auto w-full border-b border-white/10 bg-black/40 backdrop-blur-xl"
+      transition={{ duration: 0.6, ease: 'easeOut' }}
+      className="sticky top-0 z-50 w-full border-b border-slate-800 bg-slate-950/70 backdrop-blur-3xl"
     >
       <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 text-sm text-slate-300 md:px-10">
         <a href="#hero" className="font-semibold tracking-[0.3em] text-amber-300">
-          SAAS PORTFOLIO
+          PORTFOLIO
         </a>
-        <div className="hidden items-center gap-7 md:flex">
+        <div className="hidden items-center gap-6 md:flex">
           {navItems.map((item) => (
             <a
               key={item.label}
               href={item.href}
-              className="transition hover:text-amber-300"
+              className="rounded-full px-3 py-2 text-slate-100 transition hover:text-amber-300 hover:bg-white/5"
             >
               {item.label}
             </a>
