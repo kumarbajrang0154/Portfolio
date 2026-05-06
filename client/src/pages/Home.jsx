@@ -3,6 +3,7 @@ import HeroSection from '../components/HeroSection.jsx';
 import AboutSection from '../components/AboutSection.jsx';
 import SkillsSection from '../components/SkillsSection.jsx';
 import ProjectsSection from '../components/ProjectsSection.jsx';
+import WhyWorkWithMeSection from '../components/WhyWorkWithMeSection.jsx';
 import CertificationsSection from '../components/CertificationsSection.jsx';
 import ContactSection from '../components/ContactSection.jsx';
 import HireModal from '../components/HireModal.jsx';
@@ -13,6 +14,7 @@ const Home = ({ modalOpen, setModalOpen, resumeCount, handleResumeDownload, hand
     <AboutSection />
     <SkillsSection />
     <ProjectsSection />
+    <WhyWorkWithMeSection />
     <CertificationsSection />
     <ContactSection onSubmit={handleContactSubmit} toast={toast} />
     <HireModal

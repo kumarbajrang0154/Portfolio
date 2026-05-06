@@ -4,6 +4,8 @@ import { AnimatePresence } from 'framer-motion';
 import Navbar from './components/Navbar.jsx';
 import Home from './pages/Home.jsx';
 import Preloader from './components/Preloader.jsx';
+import ScrollProgressBar from './components/ScrollProgressBar.jsx';
+import CursorGlow from './components/CursorGlow.jsx';
 import { fetchDownloadCount, registerResumeDownload, sendContactMessage } from './api.js';
 
 function App() {
@@ -55,6 +57,8 @@ function App() {
   return (
     <Router>
       <div className="min-h-screen bg-brand-900 text-slate-100 overflow-x-hidden">
+        <ScrollProgressBar />
+        <CursorGlow />
         <AnimatePresence>{isLoading && <Preloader />}</AnimatePresence>
         <Navbar
           onHire={() => setModalOpen(true)}

@@ -1,5 +1,6 @@
 import { useState } from 'react';
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
+import { CheckCircleIcon } from '@heroicons/react/24/solid';
 
 const ContactSection = ({ onSubmit, toast }) => {
   const [form, setForm] = useState({ name: '', email: '', message: '' });
@@ -16,6 +17,7 @@ const ContactSection = ({ onSubmit, toast }) => {
     setStatus(success ? 'success' : 'error');
     if (success) {
       setForm({ name: '', email: '', message: '' });
+      setTimeout(() => setStatus('idle'), 4000);
     }
   };
 

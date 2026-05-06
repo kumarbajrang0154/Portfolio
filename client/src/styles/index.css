@@ -139,3 +139,302 @@ section {
 .pulse-animate {
   animation: pulse-soft 12s ease-in-out infinite;
 }
+
+/* Premium grain texture overlay */
+@keyframes grain {
+  0%, 100% {
+    background-position: 0 0;
+  }
+  10% {
+    background-position: -5% -10%;
+  }
+  20% {
+    background-position: -15% 5%;
+  }
+  30% {
+    background-position: 7% -25%;
+  }
+  40% {
+    background-position: -5% -5%;
+  }
+  50% {
+    background-position: -25% 10%;
+  }
+  60% {
+    background-position: 10% -15%;
+  }
+  70% {
+    background-position: 0 7%;
+  }
+  80% {
+    background-position: 10% -25%;
+  }
+  90% {
+    background-position: -5% 5%;
+  }
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background-image: 
+    repeating-linear-gradient(
+      0deg,
+      rgba(255, 255, 255, 0.03),
+      rgba(255, 255, 255, 0.03) 1px,
+      transparent 1px,
+      transparent 2px
+    ),
+    repeating-linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0.03),
+      rgba(255, 255, 255, 0.03) 1px,
+      transparent 1px,
+      transparent 2px
+    );
+  background-size: 4px 4px, 4px 4px;
+  animation: grain 8s steps(10) infinite;
+  z-index: 9999;
+  opacity: 0.5;
+}
+
+/* Magnetic button effect */
+.magnetic-btn {
+  position: relative;
+  overflow: hidden;
+}
+
+.magnetic-btn::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(255, 255, 255, 0.1), transparent 50%);
+  pointer-events: none;
+}
+
+/* Card glass premium effect */
+.card-glass {
+  background: rgba(10, 18, 36, 0.78);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(24px);
+  transition: all 0.35s cubic-bezier(0.23, 1, 0.320, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.card-glass::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.08), transparent);
+  opacity: 0;
+  transition: opacity 0.35s ease;
+  pointer-events: none;
+}
+
+.card-glass:hover {
+  transform: translateY(-8px) scale(1.01);
+  border-color: rgba(255, 184, 80, 0.25);
+  box-shadow: 0 40px 120px rgba(255, 173, 51, 0.16), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+.card-glass:hover::before {
+  opacity: 1;
+}
+
+/* Smooth scroll progress bar */
+.scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #ffd166, #ff7a18, #ffd166);
+  background-size: 200% 100%;
+  animation: progress-shimmer 2s ease-in-out infinite;
+  z-index: 9998;
+  box-shadow: 0 0 20px rgba(255, 209, 102, 0.6);
+}
+
+@keyframes progress-shimmer {
+  0%, 100% {
+    background-position: 0% 0%;
+  }
+  50% {
+    background-position: 100% 0%;
+  }
+}
+
+/* Pulsing availability badge */
+.availability-badge {
+  animation: badge-pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes badge-pulse {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.7);
+  }
+  50% {
+    box-shadow: 0 0 0 10px rgba(34, 197, 94, 0);
+  }
+}
+
+/* Premium button hover glow */
+.btn-glow {
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-glow::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  transform: translateX(-100%);
+  transition: transform 0.6s ease;
+}
+
+.btn-glow:hover::before {
+  transform: translateX(100%);
+}
+
+/* Status indicator animation */
+.status-online {
+  position: relative;
+}
+
+.status-online::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle, rgba(34, 197, 94, 0.8), transparent);
+  animation: status-glow 2s ease-in-out infinite;
+}
+
+@keyframes status-glow {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.7);
+  }
+  50% {
+    box-shadow: 0 0 0 4px rgba(34, 197, 94, 0.3);
+  }
+}
+
+/* Premium reveal animation */
+@keyframes reveal {
+  from {
+    opacity: 0;
+    clip-path: inset(0 100% 0 0);
+  }
+  to {
+    opacity: 1;
+    clip-path: inset(0 0 0 0);
+  }
+}
+
+.reveal {
+  animation: reveal 0.8s ease-out;
+}
+
+/* Smooth stagger effect */
+@keyframes stagger {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Enhanced glow effect */
+.shadow-glow {
+  box-shadow: 0 0 30px rgba(255, 184, 80, 0.4);
+  transition: box-shadow 0.3s ease;
+}
+
+.shadow-glow:hover {
+  box-shadow: 0 0 50px rgba(255, 184, 80, 0.6);
+}
+
+/* Profile image glow */
+.profile-glow {
+  position: relative;
+  border-radius: 50%;
+}
+
+.profile-glow::before {
+  content: '';
+  position: absolute;
+  inset: -4px;
+  background: linear-gradient(135deg, #ffd166, #ff7a18, #ffd166, #ffd166);
+  border-radius: 50%;
+  padding: 3px;
+  background-size: 300% 300%;
+  animation: glow-rotate 8s linear infinite;
+  z-index: -1;
+}
+
+@keyframes glow-rotate {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Success state animation */
+@keyframes success-check {
+  0% {
+    transform: scale(0) rotate(-45deg);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(1.2) rotate(0deg);
+  }
+  100% {
+    transform: scale(1) rotate(0deg);
+    opacity: 1;
+  }
+}
+
+.success-check {
+  animation: success-check 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+/* Cursor tracking effect */
+.cursor-glow {
+  position: fixed;
+  pointer-events: none;
+  z-index: 9997;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255, 184, 80, 0.8), transparent);
+  filter: blur(40px);
+  mix-blend-mode: screen;
+}
+
+/* Premium link hover effect */
+a {
+  position: relative;
+}
+
+a::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, #ffd166, #ff7a18);
+  transition: width 0.3s cubic-bezier(0.23, 1, 0.320, 1);
+}
+
+a:hover::after {
+  width: 100%;
+}
