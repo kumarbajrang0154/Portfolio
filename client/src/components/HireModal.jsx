@@ -21,7 +21,7 @@ const HireModal = ({ open, onClose, downloadCount, onDownload }) => {
             </p>
             <div className="flex flex-wrap gap-3">
               <button
-                onClick={() => window.open('/resume/resume.pdf', '_blank')}
+                onClick={() => window.open('client/src/assets/resume.pdf', '_blank')}
                 className="rounded-full border border-white/10 bg-slate-900/80 px-5 py-3 text-sm text-white transition hover:border-amber-300"
               >
                 View Resume
@@ -39,7 +39,7 @@ const HireModal = ({ open, onClose, downloadCount, onDownload }) => {
             <div className="absolute inset-x-4 top-4 h-6 rounded-full bg-slate-800/80" />
             <div className="mt-10 h-[calc(100%-56px)] overflow-hidden rounded-[1.3rem] border border-white/10 bg-black/80">
               <object
-                data="/resume/resume.pdf"
+                data="client/src/assets/resume.pdf"
                 type="application/pdf"
                 className="h-full w-full"
               >
