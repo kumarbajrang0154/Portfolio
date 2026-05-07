@@ -3,22 +3,22 @@ import { CheckCircleIcon, LightBulbIcon, RocketLaunchIcon } from '@heroicons/rea
 
 const benefits = [
   {
-    title: 'Ship faster',
-    description: 'Production-ready components and optimized workflows save weeks of development time.',
+    title: 'Full Stack Expertise',
+    description: 'End-to-end development from frontend UI to backend APIs. Capable of building complete web applications independently.',
     icon: RocketLaunchIcon,
-    stat: '3-4 weeks faster'
+    stat: '5+ projects'
   },
   {
-    title: 'Better user experience',
-    description: 'Premium motion design and thoughtful interactions increase engagement and conversion.',
+    title: 'Problem Solving',
+    description: 'Strong fundamentals in data structures, algorithms, and system design. Approach challenges methodically and find optimal solutions.',
     icon: LightBulbIcon,
-    stat: '+35% engagement'
+    stat: '10+ technologies'
   },
   {
-    title: 'Premium craftsmanship',
-    description: 'Every pixel matters. Polished details create trust and elevate your brand perception.',
+    title: 'Commitment to Quality',
+    description: 'Clean, maintainable code with focus on performance and user experience. Premium attention to detail in every project.',
     icon: CheckCircleIcon,
-    stat: '100% polish'
+    stat: '5 certifications'
   }
 ];
 
@@ -33,12 +33,12 @@ const WhyWorkWithMeSection = () => {
           viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: 0.7 }}
         >
-          <p className="text-sm uppercase tracking-[0.35em] text-amber-300">Why Work With Me</p>
+          <p className="text-sm uppercase tracking-[0.35em] text-amber-300">Why Hire Me</p>
           <h2 className="mt-4 text-4xl font-semibold text-white sm:text-5xl">
-            Transform your product with premium execution
+            A developer who ships quality products
           </h2>
           <p className="mx-auto mt-6 max-w-2xl text-lg leading-8 text-slate-300">
-            I don't just build interfaces. I craft experiences that feel like funded startup products.
+            KPRIET student with real-world internship experience, strong technical foundation, and proven ability to build full-stack web applications.
           </p>
         </motion.div>
 
